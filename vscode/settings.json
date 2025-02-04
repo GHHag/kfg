@@ -1,0 +1,93 @@
+{
+    "editor.fontSize": 12,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-j>"],
+            "commands": ["editor.action.insertLineAfter"]
+        },
+        {
+            "before": ["ö"],
+            "after": ["["]
+        },
+        {
+            "before": ["ä"],
+            "after": ["]"]
+        },
+        {
+            "before": ["Ö"],
+            "after": ["{"]
+        },
+        {
+            "before": ["Ä"],
+            "after": ["}"]
+        },
+        {
+            "before": ["å"],
+            "after": ["&"]
+        },
+        {
+            "before": ["Å"],
+            "after": ["|"]
+        },
+        {
+            "before": ["<C-a>"],
+            "after": ["<"]
+        },
+        {
+            "before": ["<C-d>"],
+            "after": [">"]
+        },
+    ],
+    "vim.statusBarColorControl": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-d>"], 
+            "after": ["<C-d>", "z", "z"] 
+        }, 
+        { 
+            "before": ["<C-u>"], 
+            "after": ["<C-u>", "z", "z"] 
+        },
+        {
+            "before": ["<tab>"],
+            "commands": ["editor.action.indentLines"]
+        },
+        {
+            "before": ["<S-tab>"],
+            "commands": ["editor.action.outdentLines"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<tab>"],
+            "commands": ["editor.action.indentLines"]
+        },
+        {
+            "before": ["<S-tab>"],
+            "commands": ["editor.action.outdentLines"]
+        }
+    ],
+    "vim.statusBarColors.insert": "#148707",
+    "vim.statusBarColors.normal": "#b86800",
+    "vim.statusBarColors.replace": "#000000",
+    "vim.statusBarColors.visual": "#49a9fc",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#b86800",
+        "statusBar.noFolderBackground": "#b86800",
+        "statusBar.debuggingBackground": "#b86800",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.debuggingForeground": "#ffffff"
+    },
+    "editor.fontFamily": "Consolas, monospace",
+    "editor.lineNumbers": "relative",
+    "window.autoDetectHighContrast": false,
+    "git.confirmSync": false,
+    "editor.fontLigatures": false,
+    "notebook.output.scrolling": true,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "remote.autoForwardPortsSource": "hybrid",
+}
