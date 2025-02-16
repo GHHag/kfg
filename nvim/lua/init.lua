@@ -127,7 +127,7 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = {
+    options = {
       char = '┊',
       char_highlight_list =  '#000000',
       show_trailing_blankline_indent = false,
@@ -298,15 +298,14 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 vim.keymap.set('n', '<leader>e', ':NvimTreeOpen<CR>')
-
-vim.keymap.set('n', '<leader><C-t>', ':split | terminal<CR>')
-vim.keymap.set('n', '<leader><C-T>', ':split | terminal<CR>')
+vim.keymap.set('n', '<leader><C-t>', ':vsplit | terminal<CR>')
+vim.keymap.set('n', '<leader><C-T>', ':vsplit | terminal<CR>')
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'elixir', 'heex' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -432,7 +431,7 @@ end
 --  define the property 'filetypes' to the map in question.
 local servers = {
   -- clangd = {},
-  gopls = {},
+  -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
@@ -450,10 +449,6 @@ local servers = {
       flake8 = { indentSize = 4 }
     }
   },
-
-  elixirls = {},
-
-  -- gleam = {}
 }
 
 -- Setup neovim lua configuration
@@ -529,14 +524,13 @@ cmp.setup {
   },
 }
 
-
 -- little keymaps
 vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', {noremap = true})
 vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', {noremap = true})
 vim.api.nvim_set_keymap('n', 'n', 'nzzzv', {noremap = true})
 vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', {noremap = true})
+-- This remap allows you to paste over selected text without overwriting your clipboard.
 vim.api.nvim_set_keymap('x', '<leader>p', '"_dP', {noremap = true})
-
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
