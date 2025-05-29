@@ -1,22 +1,34 @@
-set relativenumber
+set relativenumber 
 
-:imap ö [
-:imap ä ]
-:imap Ö {
-:imap Ä }
-:imap å &
-:imap Å <Bar>
+inoremap ö [
+inoremap ä ]
+inoremap Ö {
+inoremap Ä }
+inoremap å &
+inoremap Å <Bar>
 
-imap <C-j> <Esc>o
-imap <C-a> <
-imap <C-d> >
+inoremap <C-j> <Esc>o
+inoremap <C-a> <
+inoremap <C-d> >
+inoremap <C-s> $
+inoremap <C-q> *
+inoremap <C-f> &
+inoremap <C-l> <Bar>
+inoremap <C-v> ^
+inoremap <C-e> '
+inoremap <C-g> /
+inoremap <C-b> <Up>
+inoremap <C-z> <Down>
+
+inoremap <A-a> <Esc>^i
+inoremap <A-e> <Esc>$i
 
 inoremap <C-k> <C-o>x
-" inoremap <S-Tab> <C-o><< 
+inoremap <S-Tab> <C-d>
 
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
-vnoremap <Tab> >
-vnoremap <S-Tab> <
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 lua require('init')

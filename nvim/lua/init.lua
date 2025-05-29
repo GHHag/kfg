@@ -43,6 +43,7 @@ require('lazy').setup({
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       { 'williamboman/mason.nvim', config = true },
+
       {'williamboman/mason-lspconfig.nvim', ensure_installed = 'eslint'},
 
       -- Useful status updates for LSP
@@ -51,13 +52,6 @@ require('lazy').setup({
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
-
-     -- on_attach = function(client, bufnr)
-     --   vim.api.nvim_create_autocmd("BufWritePre", {
-     --     buffer = bufnr,
-     --     command = "EslintFixAll",
-     --   })
-     -- end,
     },
   },
 
@@ -221,6 +215,9 @@ vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
+vim.o.autoindent = true
+vim.o.smartindent = true
+-- vim.o.indentexpr = ""
 
 -- Save undo history
 vim.o.undofile = true
@@ -311,7 +308,7 @@ require('nvim-treesitter.configs').setup {
   auto_install = false,
 
   highlight = { enable = true },
-  indent = { enable = true },
+  -- indent = { enable = true },
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -534,3 +531,12 @@ vim.api.nvim_set_keymap('x', '<leader>p', '"_dP', {noremap = true})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+vim.api.nvim_create_autocmd("FileType", {
+pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.expandtab = true
+  end,
+})
